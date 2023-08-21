@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "EscuelaPastoralWeb": {
+    "EscuelaPastoralAngular": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/escuela-pastoral-web",
+            "outputPath": "dist/escuela-pastoral-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "EscuelaPastoralWeb:build:production"
+              "browserTarget": "EscuelaPastoralAngular:build:production"
             },
             "development": {
-              "browserTarget": "EscuelaPastoralWeb:build:development"
+              "browserTarget": "EscuelaPastoralAngular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "EscuelaPastoralWeb:build"
+            "browserTarget": "EscuelaPastoralAngular:build"
           }
         },
         "test": {
