@@ -1,0 +1,42 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+    <button (click)="drawer.toggle()" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Escuela Internacional de Pastores</span>
+    <span class="example-spacer"></span>
+    <button routerLink="" mat-button>Joel Maldonado</button>
+    <button (click)="badgevisibility()" mat-icon-button>
+      <mat-icon matBadgeColor="accent" matBadge="15" matBadgeSize="small">logout</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-drawer-container autosize>
+    <mat-drawer #drawer opened="true" mode="side" position="start">
+      <mat-nav-list>
+        <mat-list-item (click)="navegar('alumno')">
+          <p>
+            <mat-icon>groups</mat-icon>Alumnos
+          </p>
+        </mat-list-item>
+        <mat-list-item (click)="navegar('maestro')">
+          <p>
+            <mat-icon>school</mat-icon>Profesores
+          </p>
+        </mat-list-item>
+        <mat-list-item (click)="navegar('curso')">
+          <p>
+            <mat-icon>book</mat-icon>Cursos
+          </p>
+        </mat-list-item>
+        <mat-list-item (click)="navegar('evento')">
+          <p>
+            <mat-icon>edit_calendar</mat-icon>Eventos
+          </p>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div style="text-align: center;min-height: 1000px;">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
