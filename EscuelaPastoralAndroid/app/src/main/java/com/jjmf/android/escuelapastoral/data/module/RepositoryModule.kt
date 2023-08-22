@@ -1,6 +1,8 @@
 package com.jjmf.android.escuelapastoral.data.module
 
+import com.jjmf.android.escuelapastoral.data.repository.EventoRepository
 import com.jjmf.android.escuelapastoral.data.repository.UsuarioRepository
+import com.jjmf.android.escuelapastoral.domain.repository.EventoRepositoryImpl
 import com.jjmf.android.escuelapastoral.domain.repository.UsuarioRepositoryImpl
 import dagger.Binds
 import dagger.Module
@@ -14,4 +16,6 @@ abstract class RepositoryModule {
     @Binds
     abstract fun usuarioRepo(impl: UsuarioRepositoryImpl): UsuarioRepository
 
+    @Binds
+    abstract fun eventoRepo(impl: EventoRepositoryImpl): EventoRepository
 }
