@@ -1,4 +1,4 @@
-package com.jjmf.android.escuelapastoral.ui.features.VerEventos.AddEvent
+package com.jjmf.android.escuelapastoral.ui.features.VerEventos.Add
 
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue

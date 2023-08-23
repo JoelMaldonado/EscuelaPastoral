@@ -1,5 +1,6 @@
 package com.jjmf.android.escuelapastoral.ui.features.VerEventos
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -25,6 +26,7 @@ import com.jjmf.android.escuelapastoral.ui.theme.Titulo
 @Composable
 fun VerEventosScreen(
     toAddEvent: () -> Unit,
+    toDetalle:()->Unit,
     viewModel: VerEventosViewModel = hiltViewModel(),
 ) {
 
@@ -33,7 +35,7 @@ fun VerEventosScreen(
     }
 
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxSize().padding(15.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(15.dp)
     ) {
@@ -48,7 +50,9 @@ fun VerEventosScreen(
 
                 items(viewModel.list){
                     Row(
-                        modifier = Modifier.fillMaxSize(),
+                        modifier = Modifier.fillMaxSize().clickable {
+                                                                    toDetalle()
+                        },
                         verticalAlignment = Alignment.CenterVertically
                     ){
                         Column(
@@ -63,7 +67,7 @@ fun VerEventosScreen(
                 }
 
             }
-            FloatingActionButton(onClick = toAddEvent, modifier = Modifier.padding(15.dp)) {
+            FloatingActionButton(onClick = toAddEvent) {
                 Icon(imageVector = Icons.Default.Add, contentDescription = null)
             }
         }

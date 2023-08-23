@@ -4,9 +4,14 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.jjmf.android.escuelapastoral.ui.features.Cursos.CursosScreen
 import com.jjmf.android.escuelapastoral.ui.features.Menu.MenuScreen
-import com.jjmf.android.escuelapastoral.ui.features.VerEventos.AddEvent.AddEventScreen
+import com.jjmf.android.escuelapastoral.ui.features.Usuarios.UsuariosScreen
+import com.jjmf.android.escuelapastoral.ui.features.VerEventos.Add.AddEventScreen
+import com.jjmf.android.escuelapastoral.ui.features.VerEventos.Detail.DetailEventScreen
 import com.jjmf.android.escuelapastoral.ui.features.VerEventos.VerEventosScreen
+import com.jjmf.android.escuelapastoral.ui.features.VerEventos.VerMaestros.VerMaestrosEventScreen
+import com.jjmf.android.escuelapastoral.ui.features.VerEventos.VerMaestrosDetail.VerMaestrosDetailEventScreen
 
 @Composable
 fun NavegacionPrincipal() {
@@ -16,24 +21,65 @@ fun NavegacionPrincipal() {
             MenuScreen(
                 toEventos = {
                     navController.navigate(Rutas.Eventos.url)
+                },
+                toCursos = {
+                    navController.navigate(Rutas.Cursos.url)
+                },
+                toUsuarios = {
+                    navController.navigate(Rutas.Usuarios.url)
                 }
             )
         }
 
+        /**Eventos**/
         composable(Rutas.Eventos.url){
             VerEventosScreen(
                 toAddEvent = {
-                    navController.navigate(Rutas.Eventos.AddEvent.url)
+                    navController.navigate(Rutas.Eventos.Add.url)
+                },
+                toDetalle = {
+                    navController.navigate(Rutas.Eventos.Detail.url)
                 }
             )
         }
 
-        composable(Rutas.Eventos.AddEvent.url){
+        composable(Rutas.Eventos.Add.url){
             AddEventScreen(
                 back = {
                     navController.popBackStack()
                 }
             )
         }
+
+        composable(Rutas.Eventos.Detail.url){
+            DetailEventScreen(
+                toVerMaestros = {
+                    navController.navigate(Rutas.Eventos.VerMaestros.url)
+                }
+            )
+        }
+
+        composable(Rutas.Eventos.VerMaestros.url){
+            VerMaestrosEventScreen(
+                toDetail = {
+                    navController.navigate(Rutas.Eventos.VerMaestrosDetalle.url)
+                }
+            )
+        }
+
+        composable(Rutas.Eventos.VerMaestrosDetalle.url){
+            VerMaestrosDetailEventScreen()
+        }
+
+        /**Cursos**/
+        composable(Rutas.Cursos.url){
+            CursosScreen()
+        }
+
+        /**Usuarios**/
+        composable(Rutas.Usuarios.url){
+            UsuariosScreen()
+        }
+
     }
 }

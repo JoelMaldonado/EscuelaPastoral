@@ -8,10 +8,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
 fun MenuScreen(
-    toEventos:()->Unit
+    toEventos: () -> Unit,
+    toCursos: () -> Unit,
+    toUsuarios: () -> Unit,
+    viewModel: MenuViewModel = hiltViewModel(),
 ) {
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -24,5 +28,18 @@ fun MenuScreen(
         ) {
             Text(text = "Eventos")
         }
+
+        Button(
+            onClick = toCursos
+        ) {
+            Text(text = "Cursos")
+        }
+
+        Button(
+            onClick = toUsuarios
+        ) {
+            Text(text = "Usuarios")
+        }
+
     }
 }
