@@ -24,4 +24,31 @@ class FirebaseModule {
     @Qualifier
     @Retention(AnnotationRetention.BINARY)
     annotation class EventosCollection
+
+    @CursoCollection
+    @Provides
+    @Singleton
+    fun provideCursos() = provideFirebase().collection("Cursos")
+
+    @Qualifier
+    @Retention(AnnotationRetention.BINARY)
+    annotation class CursoCollection
+
+    @UsuarioCollection
+    @Provides
+    @Singleton
+    fun provideUsuarios() = provideFirebase().collection("Usuarios")
+
+    @Qualifier
+    @Retention(AnnotationRetention.BINARY)
+    annotation class UsuarioCollection
+
+    @PaisCollection
+    @Provides
+    @Singleton
+    fun providePais() = provideFirebase().collection("Paises")
+
+    @Qualifier
+    @Retention(AnnotationRetention.BINARY)
+    annotation class PaisCollection
 }

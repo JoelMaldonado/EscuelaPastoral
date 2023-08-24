@@ -23,6 +23,7 @@ import com.jjmf.android.escuelapastoral.ui.theme.Titulo
 @Composable
 fun DetailEventScreen(
     toVerMaestros:()->Unit,
+    toVerSolicitudes:()->Unit,
     viewModel: DetailEventViewModel = hiltViewModel(),
 ) {
     Column(
@@ -67,6 +68,10 @@ fun DetailEventScreen(
             title = "Costo",
             descrip = "S/50"
         )
+        DetalleItem(
+            title = "Estado",
+            descrip = "Culminado - Activo"
+        )
 
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -85,6 +90,12 @@ fun DetailEventScreen(
             ) {
                 Text(text = "Cursos")
             }
+        }
+
+        Button(
+            onClick = toVerSolicitudes
+        ) {
+            Text(text = "Solicitudes")
         }
 
         Button(
@@ -126,8 +137,6 @@ fun DetalleItem(
             fontWeight = FontWeight.Medium
         )
         Text(text = descrip, modifier = Modifier.weight(2f), fontSize = 14.sp)
-
-
     }
 
 }

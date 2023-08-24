@@ -15,6 +15,7 @@ fun MenuScreen(
     toEventos: () -> Unit,
     toCursos: () -> Unit,
     toUsuarios: () -> Unit,
+    toPaises: () -> Unit,
     viewModel: MenuViewModel = hiltViewModel(),
 ) {
     Column(
@@ -39,6 +40,11 @@ fun MenuScreen(
             onClick = toUsuarios
         ) {
             Text(text = "Usuarios")
+        }
+        Button(
+            onClick = toPaises
+        ) {
+            Text(text = "Paises")
         }
 
     }

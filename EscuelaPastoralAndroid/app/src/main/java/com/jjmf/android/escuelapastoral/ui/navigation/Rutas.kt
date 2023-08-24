@@ -7,9 +7,13 @@ sealed class Rutas(val url:String){
         object Add : Rutas(url = "add_event")
         object Detail : Rutas(url = "detail_evento")
         object VerAlumnos : Rutas(url = "alumnos_evento")
+        object VerSolicitudes : Rutas(url = "solicitudes_evento")
         object VerMaestros : Rutas(url = "maestros_evento")
         object VerMaestrosDetalle : Rutas(url = "maestros_detalle_evento")
     }
     object Cursos: Rutas(url = "cursos")
-    object Usuarios: Rutas(url = "usuarios")
+    object Usuarios: Rutas(url = "usuarios"){
+        object Add:Rutas("add_usuario")
+    }
+    object Paises: Rutas(url = "paises")
 }

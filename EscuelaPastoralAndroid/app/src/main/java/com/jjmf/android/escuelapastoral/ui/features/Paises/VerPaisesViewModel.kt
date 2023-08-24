@@ -1,26 +1,24 @@
-package com.jjmf.android.escuelapastoral.ui.features.Usuarios
+package com.jjmf.android.escuelapastoral.ui.features.Paises
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.jjmf.android.escuelapastoral.data.repository.EventoRepository
-import com.jjmf.android.escuelapastoral.data.repository.UsuarioRepository
-import com.jjmf.android.escuelapastoral.domain.model.Curso
+import com.jjmf.android.escuelapastoral.data.repository.PaisRepository
+import com.jjmf.android.escuelapastoral.domain.model.Pais
 import com.jjmf.android.escuelapastoral.domain.model.Usuario
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.sql.DriverPropertyInfo
 import javax.inject.Inject
 
 @HiltViewModel
-class UsuariosViewModel @Inject constructor(
-    private val repository: UsuarioRepository,
+class VerPaisesViewModel @Inject constructor(
+    private val repository: PaisRepository
 ) : ViewModel() {
 
-    var list by mutableStateOf<List<Usuario>>(emptyList())
+    var list by mutableStateOf<List<Pais>>(emptyList())
     var error by mutableStateOf<String?>(null)
 
     fun init(){
