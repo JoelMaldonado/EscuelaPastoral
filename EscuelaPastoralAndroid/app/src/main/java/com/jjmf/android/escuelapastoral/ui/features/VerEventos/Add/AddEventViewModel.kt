@@ -5,6 +5,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.google.firebase.Timestamp
 import com.jjmf.android.escuelapastoral.data.dto.EventoDto
 import com.jjmf.android.escuelapastoral.data.repository.EventoRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -20,8 +21,8 @@ class AddEventViewModel @Inject constructor(
     var titulo by mutableStateOf("")
     var descrip by mutableStateOf("")
     var cant by mutableStateOf("")
-    var fechaInicio by mutableStateOf("")
-    var fechaFin by mutableStateOf("")
+    var fechaInicio by mutableStateOf<Timestamp?>(null)
+    var fechaFin by mutableStateOf<Timestamp?>(null)
     var pais by mutableStateOf("")
     var direc by mutableStateOf("")
     var costo by mutableStateOf("")

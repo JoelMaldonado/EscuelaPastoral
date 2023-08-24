@@ -1,5 +1,6 @@
 package com.jjmf.android.escuelapastoral.data.dto
 
+import com.google.firebase.Timestamp
 import com.google.firebase.firestore.Exclude
 import com.jjmf.android.escuelapastoral.domain.model.Evento
 
@@ -8,8 +9,8 @@ data class EventoDto(
     val titulo: String? = null,
     val descrip: String? = null,
     val cant: Int? = null,
-    val fechaInicio: String? = null,
-    val fechaFin: String? = null,
+    val fechaInicio: Timestamp? = null,
+    val fechaFin: Timestamp? = null,
     val pais: String? = null,
     val direc: String? = null,
     val costo: Double? = null,
@@ -20,8 +21,8 @@ data class EventoDto(
             titulo =  titulo ?: "Sin titulo",
             descrip =  descrip ?: "Sin descripción",
             cant =  cant ?: 0,
-            fechaInicio =  fechaInicio ?: "Sin fecha",
-            fechaFin =  fechaFin ?: "Sin fecha",
+            fechaInicio =   "Sin fecha",
+            fechaFin =  "Sin fecha",
             pais =  pais ?: "Sin pais",
             direc =  direc ?: "Sin dirección",
             costo =  costo ?: 0.0,
