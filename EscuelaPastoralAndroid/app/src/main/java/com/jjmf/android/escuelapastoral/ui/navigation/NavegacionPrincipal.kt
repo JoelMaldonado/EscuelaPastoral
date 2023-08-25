@@ -44,7 +44,7 @@ fun NavegacionPrincipal() {
                     navController.navigate(Rutas.Eventos.Add.url)
                 },
                 toDetalle = {
-                    navController.navigate(Rutas.Eventos.Detail.url)
+                    navController.navigate(Rutas.Eventos.Detail.sendId(it))
                 }
             )
         }
@@ -58,14 +58,17 @@ fun NavegacionPrincipal() {
         }
 
         composable(Rutas.Eventos.Detail.url){
-            DetailEventScreen(
-                toVerMaestros = {
-                    navController.navigate(Rutas.Eventos.VerMaestros.url)
-                },
-                toVerSolicitudes = {
-                    navController.navigate(Rutas.Eventos.VerSolicitudes.url)
-                }
-            )
+            it.arguments?.getString("id")?.let {id->
+                DetailEventScreen(
+                    id = id,
+                    toVerMaestros = {
+                        navController.navigate(Rutas.Eventos.VerMaestros.url)
+                    },
+                    toVerSolicitudes = {
+                        navController.navigate(Rutas.Eventos.VerSolicitudes.url)
+                    }
+                )
+            }
         }
 
         composable(Rutas.Eventos.VerSolicitudes.url){

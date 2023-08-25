@@ -10,4 +10,6 @@ interface EventoRepository {
 
     suspend fun getFlow() : Flow<List<Evento>>
 
+    suspend fun get(id:String) : Evento?
+
 }

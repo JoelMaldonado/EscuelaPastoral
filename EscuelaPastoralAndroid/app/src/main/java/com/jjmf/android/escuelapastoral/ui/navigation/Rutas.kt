@@ -5,7 +5,9 @@ sealed class Rutas(val url:String){
     object Menu: Rutas(url = "menu")
     object Eventos: Rutas(url = "eventos"){
         object Add : Rutas(url = "add_event")
-        object Detail : Rutas(url = "detail_evento")
+        object Detail : Rutas(url = "detail_evento?{id}"){
+            fun sendId(id:String) = "detail_evento?$id"
+        }
         object VerAlumnos : Rutas(url = "alumnos_evento")
         object VerSolicitudes : Rutas(url = "solicitudes_evento")
         object VerMaestros : Rutas(url = "maestros_evento")

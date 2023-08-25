@@ -1,6 +1,7 @@
 package com.jjmf.android.escuelapastoral.ui.features.VerEventos.Detail
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,24 +9,51 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.jjmf.android.escuelapastoral.ui.theme.Titulo
+import com.jjmf.android.escuelapastoral.util.show
 
 @Composable
 fun DetailEventScreen(
+    id:String,
     toVerMaestros:()->Unit,
     toVerSolicitudes:()->Unit,
     viewModel: DetailEventViewModel = hiltViewModel(),
 ) {
+
+
+    LaunchedEffect(key1 = Unit){
+        viewModel.init(id)
+    }
+
+    val context = LocalContext.current
+
+    viewModel.error?.let {
+        context.show(it)
+        viewModel.error = null
+    }
+
+    val evento = viewModel.evento
+
+    if (viewModel.cargando){
+        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+            CircularProgressIndicator()
+        }
+        return
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -38,35 +66,35 @@ fun DetailEventScreen(
 
         DetalleItem(
             title = "Titulo",
-            descrip = "Curayacu 2023"
+            descrip = "${evento?.titulo}"
         )
         DetalleItem(
             title = "Descripción",
-            descrip = "Evento para jovenes, edicion 3"
+            descrip = "${evento?.descrip}"
         )
         DetalleItem(
             title = "Pais",
-            descrip = "Peru"
+            descrip = "${evento?.pais}"
         )
         DetalleItem(
             title = "Direccion",
-            descrip = "Calle. Las almejas 123 - San Bartolo"
+            descrip = "${evento?.direc}"
         )
         DetalleItem(
             title = "Capacidad",
-            descrip = "200"
+            descrip = "${evento?.cant}"
         )
         DetalleItem(
             title = "Fecha Inicio",
-            descrip = "01/01/2024"
+            descrip = "${evento?.toFecha(evento.fechaInicio, "dd/MM/yyyy")}"
         )
         DetalleItem(
             title = "Fecha Fin",
-            descrip = "05/01/2024"
+            descrip = "${evento?.toFecha(evento.fechaFin, "dd/MM/yyyy")}"
         )
         DetalleItem(
             title = "Costo",
-            descrip = "S/50"
+            descrip = "S/${evento?.costo}"
         )
         DetalleItem(
             title = "Estado",

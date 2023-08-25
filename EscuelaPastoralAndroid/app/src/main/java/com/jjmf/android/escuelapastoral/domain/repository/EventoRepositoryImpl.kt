@@ -35,4 +35,8 @@ class EventoRepositoryImpl @Inject constructor(
         }
         awaitClose { listado.remove() }
     }
+
+    override suspend fun get(id: String): Evento? {
+        return fb.document(id).get().await().toObject(EventoDto::class.java)?.toEvento()
+    }
 }
