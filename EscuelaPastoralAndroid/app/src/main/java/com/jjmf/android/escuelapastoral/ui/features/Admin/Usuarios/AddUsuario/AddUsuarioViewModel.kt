@@ -22,7 +22,7 @@ class AddUsuarioViewModel @Inject constructor(
     var cel by mutableStateOf("")
     var userType by mutableStateOf("")
 
-    fun insert(){
+    fun insert() {
 
         // Aquí puedes manejar la lógica para insertar el usuario en tu backend o base de datos.
         val newUser = UsuarioDto(
@@ -32,5 +32,29 @@ class AddUsuarioViewModel @Inject constructor(
             foto = "",
             tipoUsuario = if (userType == "Usuario") TipoUsuario.Usuario else TipoUsuario.SinAcceso
         )
+
+        /*
+                class SalonViewModel : ViewModel() {
+
+                    private val db = FirebaseFirestore.getInstance()
+
+                    fun addAlumnoToSalon(salonId: String, nuevoAlumno: Alumno) {
+                        val salonRef = db.collection("salones").document(salonId)
+
+                        db.runTransaction { transaction ->
+                            val salonSnapshot = transaction.get(salonRef)
+                            val alumnosList = salonSnapshot.get("alumnos") as? List<*> ?: emptyList()
+
+                            val nuevosAlumnos = alumnosList.plus(nuevoAlumno)
+                            transaction.update(salonRef, "alumnos", nuevosAlumnos)
+                        }
+                            .addOnSuccessListener {
+                                // Éxito al agregar el alumno
+                            }
+                            .addOnFailureListener { e ->
+                                // Manejo de error
+                            }
+                    }
+                }*/
     }
 }

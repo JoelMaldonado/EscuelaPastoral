@@ -21,7 +21,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.jjmf.android.escuelapastoral.ui.features.VerEventos.Components.CardEvento
+import com.jjmf.android.escuelapastoral.ui.features.Admin.VerEventos.Components.CardEvento
 import com.jjmf.android.escuelapastoral.ui.theme.ColorBlack
 import com.jjmf.android.escuelapastoral.ui.theme.Titulo
 

@@ -4,16 +4,16 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.jjmf.android.escuelapastoral.ui.features.Admin.Cursos.CursosScreen
-import com.jjmf.android.escuelapastoral.ui.features.Menu.MenuScreen
-import com.jjmf.android.escuelapastoral.ui.features.Paises.VerPaisesScreen
-import com.jjmf.android.escuelapastoral.ui.features.Usuarios.AddUsuario.AddUsuarioScreen
-import com.jjmf.android.escuelapastoral.ui.features.Usuarios.UsuariosScreen
-import com.jjmf.android.escuelapastoral.ui.features.VerEventos.Add.AddEventScreen
-import com.jjmf.android.escuelapastoral.ui.features.VerEventos.Detail.DetailEventScreen
-import com.jjmf.android.escuelapastoral.ui.features.VerEventos.Solicitudes.VerSolicitudesEventScreen
-import com.jjmf.android.escuelapastoral.ui.features.VerEventos.VerEventosScreen
-import com.jjmf.android.escuelapastoral.ui.features.VerEventos.VerMaestros.VerMaestrosEventScreen
-import com.jjmf.android.escuelapastoral.ui.features.VerEventos.VerMaestrosDetail.VerMaestrosDetailEventScreen
+import com.jjmf.android.escuelapastoral.ui.features.Admin.Menu.MenuScreen
+import com.jjmf.android.escuelapastoral.ui.features.Admin.Paises.VerPaisesScreen
+import com.jjmf.android.escuelapastoral.ui.features.Admin.Usuarios.AddUsuario.AddUsuarioScreen
+import com.jjmf.android.escuelapastoral.ui.features.Admin.Usuarios.UsuariosScreen
+import com.jjmf.android.escuelapastoral.ui.features.Admin.VerEventos.Add.AddEventScreen
+import com.jjmf.android.escuelapastoral.ui.features.Admin.VerEventos.Detail.DetailEventScreen
+import com.jjmf.android.escuelapastoral.ui.features.Admin.VerEventos.Solicitudes.VerSolicitudesEventScreen
+import com.jjmf.android.escuelapastoral.ui.features.Admin.VerEventos.VerEventosScreen
+import com.jjmf.android.escuelapastoral.ui.features.Admin.VerEventos.VerMaestros.VerMaestrosEventScreen
+import com.jjmf.android.escuelapastoral.ui.features.Admin.VerEventos.VerMaestrosDetail.VerMaestrosDetailEventScreen
 
 fun NavGraphBuilder.NavegacionAdmin(navController: NavHostController){
     composable(Rutas.Admin.Menu.url) {
