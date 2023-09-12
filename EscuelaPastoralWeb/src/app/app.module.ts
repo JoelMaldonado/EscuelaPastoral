@@ -7,6 +7,7 @@ import { LoginComponent } from './ui/pages/login/login.component';
 import { CajatextoComponent } from './ui/components/cajatexto/cajatexto.component';
 import { MenuComponent } from './ui/pages/menu/menu.component';
 import { FormularioComponent } from './ui/pages/formulario/formulario.component';
+import { SidenavComponent } from './ui/components/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FormularioComponent } from './ui/pages/formulario/formulario.component'
     LoginComponent,
     CajatextoComponent,
     MenuComponent,
-    FormularioComponent
+    FormularioComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
