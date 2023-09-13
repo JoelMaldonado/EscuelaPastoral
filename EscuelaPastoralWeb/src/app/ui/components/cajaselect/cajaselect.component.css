@@ -1,0 +1,65 @@
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    color: #0A58B4;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    line-height: normal;
+}
+.select-lista{
+    margin-top: 5px;
+}
+select{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+color:black;
+    font-style: normal;
+    height: 2.4rem;
+    border-radius: 10px;
+    border: 1px solid #9B9B9B;
+    background: rgba(3, 78, 62, 0.815);
+}
+option{
+    color: black;
+}
+.custom-select {
+    position: relative;
+    width: 100%;
+    border: 1px solid #9B9B9B;
+    border-radius: 10px;
+    background-color: white;
+    overflow: hidden;
+}
+
+/* Estilo para el select personalizado */
+.custom-select select {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 10px;
+    cursor: pointer;
+    /* Oculta la flecha del select nativo */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Estilo para el ícono de triángulo */
+.custom-select::after {
+    content: "\25BC"; /* Código Unicode para el triángulo hacia abajo */
+    color: #0A58B4;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 18px;
+}

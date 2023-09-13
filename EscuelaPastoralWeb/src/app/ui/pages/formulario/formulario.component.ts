@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class FormularioComponent {
 
+  lista1=['Documento Identidad','Carnet de Extranjería','Pasaporte'];
+  lista2=['Peru','Colombia','Chile','Venezuela','Colombia','Uruguay','Paraguay','Bolivia','Brasil']
+
 }

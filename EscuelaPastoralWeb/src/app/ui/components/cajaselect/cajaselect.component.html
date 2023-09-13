@@ -1,0 +1,16 @@
+<div class="container">
+    <p>{{label}}</p>
+   
+
+    <div class="select-lista">
+        <div class="select-container">
+            <div class="custom-select">
+                <select id="animal">
+                    <option *ngFor="let item of lista">
+                        {{item}}
+                    </option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>

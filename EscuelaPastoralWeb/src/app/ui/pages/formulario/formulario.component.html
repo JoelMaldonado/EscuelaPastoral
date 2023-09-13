@@ -4,8 +4,31 @@
             <img src="/assets/icono.svg">
             <p>CloudFly</p>
         </div>
-        <app-cajatexto label="Nombres y Apellidos" placeholder="Nombres y Apellidos" style="width: 100%;"></app-cajatexto>
-        <app-cajatexto label="Celular" placeholder="Correo Electronico"></app-cajatexto>
-        <app-cajatexto label="DNI" placeholder="Documento de Identidad"></app-cajatexto>
+        <app-cajatexto label="Nombres y Apellidos" placeholder="Nombres y Apellidos"></app-cajatexto>
+        <app-cajatexto label="Correo Electronico" placeholder="Correo Electronico"></app-cajatexto>
+
+        <div class="select-lista">
+            <app-cajaselect label="Documento" class="select" [lista]='lista1'></app-cajaselect>
+            <app-cajatexto label="Correo Electronico"class="select" placeholder="Correo Electronico"></app-cajatexto>
+        </div>
+
+        <div class="select-lista">
+            <app-cajaselect label="Pais" class="select" [lista]='lista2'></app-cajaselect>
+            <app-cajaselect label="Departamento" class="select" [lista]='lista2'></app-cajaselect>
+            <app-cajaselect label="Provincia" class="select" [lista]='lista1'></app-cajaselect>
+            <app-cajaselect label="Distrito" class="select" [lista]='lista1'></app-cajaselect>
+        </div>
+
+        <div class="select-lista">
+            <app-cajadata label="zzz"></app-cajadata>
+            <app-cajatexto label="Correo Electronico"class="select" placeholder="Correo Electronico"></app-cajatexto>
+            <app-cajatexto label="Correo Electronico"class="select" placeholder="Correo Electronico"></app-cajatexto>
+
+        </div>
+
+        <div>
+            <app-notificaciones label="Push Notifications"></app-notificaciones>
+             
+        </div>
     </div>
 </div>
