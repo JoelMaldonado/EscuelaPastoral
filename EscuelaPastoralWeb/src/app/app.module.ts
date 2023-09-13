@@ -7,10 +7,14 @@ import { LoginComponent } from './ui/pages/login/login.component';
 import { CajatextoComponent } from './ui/components/cajatexto/cajatexto.component';
 import { MenuComponent } from './ui/pages/menu/menu.component';
 import { FormularioComponent } from './ui/pages/formulario/formulario.component';
+
 import { CajaselectComponent } from './ui/components/cajaselect/cajaselect.component';
 import { CajadataComponent } from './ui/components/cajadata/cajadata.component';
 import { NotificacionesComponent } from './ui/components/notificaciones/notificaciones.component';
 
+
+
+import { SidenavComponent } from './ui/components/sidenav/sidenav.component';
 
 
 @NgModule({
@@ -20,10 +24,12 @@ import { NotificacionesComponent } from './ui/components/notificaciones/notifica
     CajatextoComponent,
     MenuComponent,
     FormularioComponent,
+
     CajaselectComponent,
     CajadataComponent,
-    NotificacionesComponent 
-  
+    NotificacionesComponent ,
+    SidenavComponent
+
   ],
   imports: [
     BrowserModule,
