@@ -12,8 +12,9 @@ p {
 }
 
 .caja {
-    width: 100%;
+   width: 100%;
     padding: 10px;
+    height: 2.8rem;
     margin-top: 5px;
     color: black;
     font-size: 15px;

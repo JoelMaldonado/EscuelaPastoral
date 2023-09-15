@@ -1,4 +1,5 @@
 <div class="fondo">
+
     <div class="card">
         <div class="logo">
             <img src="/assets/icono.svg">
@@ -9,7 +10,7 @@
 
         <div class="select-lista">
             <app-cajaselect label="Documento" class="select" [lista]='lista1'></app-cajaselect>
-            <app-cajatexto label="Correo Electronico"class="select" placeholder="Correo Electronico"></app-cajatexto>
+            <app-cajatexto label="Correo Electronico" class="select" placeholder="Correo Electronico"></app-cajatexto>
         </div>
 
         <div class="select-lista">
@@ -19,16 +20,17 @@
             <app-cajaselect label="Distrito" class="select" [lista]='lista1'></app-cajaselect>
         </div>
 
-        <div class="select-lista">
-            <app-cajadata label="zzz"></app-cajadata>
-            <app-cajatexto label="Correo Electronico"class="select" placeholder="Correo Electronico"></app-cajatexto>
-            <app-cajatexto label="Correo Electronico"class="select" placeholder="Correo Electronico"></app-cajatexto>
+        <div class="data-lista">
+            <app-cajadata label="Fecha"></app-cajadata>
+            <app-cajatexto label="Direccion" class="select" placeholder="Ingrese su dirección"></app-cajatexto>
+            <app-btnarchivo label="Comprobante" value="Insertar Foto"></app-btnarchivo>
 
         </div>
 
-        <div>
+        <div class="btn-ins">
             <app-notificaciones label="Push Notifications"></app-notificaciones>
-             
+            <input class="btn" type="button" value="Enviar Inscripción">
         </div>
     </div>
+
 </div>

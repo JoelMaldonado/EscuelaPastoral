@@ -15,6 +15,7 @@ import { NotificacionesComponent } from './ui/components/notificaciones/notifica
 
 
 import { SidenavComponent } from './ui/components/sidenav/sidenav.component';
+import { BtnarchivoComponent } from './ui/components/btnarchivo/btnarchivo.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { SidenavComponent } from './ui/components/sidenav/sidenav.component';
     CajaselectComponent,
     CajadataComponent,
     NotificacionesComponent ,
-    SidenavComponent
+    SidenavComponent,
+    BtnarchivoComponent
 
   ],
   imports: [

@@ -1,4 +1,39 @@
-.container{
+.container-check{
    display: grid;
    grid-template-columns: repeat(4,1fr);
+   gap: 10rem;
+   margin-top: 10px;
 }
+.container-colum{
+   color: #0A58B4;
+   font-weight: bold;
+   font-style: normal;
+   line-height: normal;
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+}
+@media screen and (max-width: 1024px) {
+   .container-check{
+      width: 100%;
+   grid-template-columns: repeat(3,1fr);
+   gap: 23px;
+ 
+   }
+}
+@media screen and (max-width: 560px) {
+
+   .container-check{
+      width: 100%;
+   grid-template-columns: repeat(2,1fr);
+   gap: 23px;
+ 
+   }
+  
+   p{
+     margin-bottom: 15px;
+     text-align: center;
+   }
+
+}
+

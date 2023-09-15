@@ -1,25 +1,27 @@
+/* Estilos generales */
 .fondo {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/fondo_form.jpeg');
     height: 100%;
     width: 100%;
     background-size: cover;
-    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    overflow: auto; /* Habilitar el scroll si es necesario */
 }
 
 .card {
     width: 68rem;
-    padding: 50px 110px 100px 110px;
+    padding: 50px 110px 65px 110px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 1px;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.logo{
+.logo {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -35,35 +37,100 @@
     font-weight: 900;
     line-height: 89.7%;
 }
-.select-lista{
+
+.select-lista {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-top: 3px;
-
-
 }
 
-.select{
+.select {
     width: 100%;
 }
 
-
-
-@media screen and (max-width: 860px){
-    .fondo{
-        background-image: none;  
-    }
-    .card {
-        width: 80%;
-        padding: 5px;
-        background-color: white;
-     
-    }
-   .select-lista{
-    display: flex;
-    flex-direction: column;
-    
+.data-lista {
+    display: grid;
+    grid-template-columns: 1fr 2.1fr 1fr;
+    gap: 10px;
 }
 
+.btn-ins {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+}
+
+.btn {
+    width: 285px;
+    height: 42px;
+    background-color: #0A58B4;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: 20px; /* Agregado para separar el botón de otros elementos */
+}
+
+/* Estilos para tabletas */
+@media screen and (max-width: 1024px) {
+    .fondo {
+        background-image: none;
+        min-height: 150vh; /* Aumenta la altura de la sección para tabletas según tus necesidades */
+    }
+
+    .card {
+        width: 90%; /* Ajusta el ancho para tabletas */
+    }
+
+    .select-lista {
+        display: flex;
+        flex-direction: column; /* Cambia a una columna para tabletas */
+    }
+
+    .data-lista {
+        display: flex;
+        flex-direction: column; /* Cambia a una columna para tabletas */
+    }
+
+    .btn-ins {
+        padding-bottom: 5rem; /* Ajusta el espacio para tabletas */
+    }
+}
+
+/* Estilos para el iPad en orientación vertical */
+
+
+/* Estilos para teléfonos móviles */
+@media screen and (max-width: 560px) {
+    .fondo {
+        background-image: none;
+        margin-top: 25px;
+        align-items: start;
+        overflow: auto;
+        max-height: 300vh;
+    }
+
+    .card {
+        width: 90%; /* Ajusta el ancho para teléfonos móviles */
+        padding: 5px;
+    }
+
+    .select-lista {
+        display: flex;
+        flex-direction: column; /* Cambia a una columna para teléfonos móviles */
+    }
+
+    .data-lista {
+        display: flex;
+        flex-direction: column; /* Cambia a una columna para teléfonos móviles */
+    }
+
+    .btn-ins {
+        padding-bottom: 4rem; /* Ajusta el espacio para teléfonos móviles */
+    }
 }
