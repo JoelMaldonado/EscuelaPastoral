@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SideNavToggle } from '../../components/sidenav/sidenav.component';
 
 @Component({
   selector: 'app-menu',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class MenuComponent {
 
+  isSideNavCollapse = false;
+  screenWidth = 0;
+
+  onToggleSideNav(data: SideNavToggle){
+    this.screenWidth = data.screenWidth;
+    this.isSideNavCollapse = data.collapsed;
+  }
 }
